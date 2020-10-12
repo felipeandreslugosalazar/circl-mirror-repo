@@ -7,36 +7,35 @@ puts "Cleaning Event database..."
 Event.destroy_all
 puts "Cleaning User database..."
 User.destroy_all
-puts "Destrying all categories"
+puts "Destroying all categories"
 Category.destroy_all
 
 puts "Creating Users"
 
 user = User.new(first_name: "Peter", last_name: "Heung-min", age: 28, user_name: "Sonny", bio: "New in Munich.", email: "peter@circl.com", password: "123456", instagram: "https://www.instagram.com/cristiano/?hl=de", linkedin: "https://www.linkedin.com/in/williamhgates")
-image = URI.open("https://res.cloudinary.com/dgnfxdfou/image/upload/v1597852530/T02NE0241-U015LPGQYNS-80d1cf14873d-512_fwcqsf.jpg")
+image = URI.open("https://res.cloudinary.com/dmpocwizs/image/upload/v1601455428/c1222ktxpivq3k8tl2eqj79k7shu.jpg")
 user.image.attach(io: image, filename: "user-profile-image", content_type: "image/jpg")
 user.save
 puts "Peter created"
 
 user = User.create!(first_name: "Paul", last_name: "Wittchen", age: 26, user_name: "Paul", bio: "Former professional football player in the Bundesliga.", email: "paul@circl.com", password: "123456", instagram: "https://www.instagram.com/kimkardashian/?hl=de", linkedin: "https://in.linkedin.com/in/mark-zuckerberg-5b8a5212a")
-image = URI.open("https://res.cloudinary.com/dgnfxdfou/image/upload/v1597852537/paul-wittchen_vactz5.png")
+image = URI.open("https://res.cloudinary.com/dmpocwizs/image/upload/v1597931752/a6fbrf5l1dmj6lr8la48mfwzq56o.png")
 user.image.attach(io: image, filename: "user-profile-image", content_type: "image/jpg")
 user.save
 puts "Paul created"
 
-user = User.create!(first_name: "Vincent", last_name: "Wittek", age: 20, user_name: "Lil'V", bio: "I am the God of code.", email: "lilv@circl.com", password: "123456", instagram: "https://www.instagram.com/realdonaldtrump/?hl=de", linkedin:"https://www.linkedin.com/showcase/warren-edward-buffett")
-image = URI.open("https://res.cloudinary.com/dgnfxdfou/image/upload/v1597852539/66871244_mges0k.jpg")
+user = User.create!(first_name: "Vincent", last_name: "Wittek", age: 20, user_name: "Lil'V", bio: "I am the God of code.", email: "lilv@circl.com", password: "123456", instagram: "https://www.instagram.com/realdonaldtrump/?hl=de", linkedin: "https://www.linkedin.com/showcase/warren-edward-buffett")
+image = URI.open("https://res.cloudinary.com/dmpocwizs/image/upload/v1597931755/uxz7gbjtru43up55bsw5he47v3m1.jpg")
 user.image.attach(io: image, filename: "user-profile-image", content_type: "image/jpg")
 user.save
 puts "Vincent created"
 
 user = User.create!(first_name: "Felipe", last_name: "Lugo", age: 30, user_name: "Pipe", bio: "Let's rock it!", email: "felipe@circl.com", password: "123456", instagram: "https://www.instagram.com/jeffbezos/", linkedin: "https://www.linkedin.com/showcase/jeff-bezos-newslines")
-image = URI.open("https://res.cloudinary.com/dgnfxdfou/image/upload/v1597852535/T02NE0241-U016794N1R6-b862c16b2ec3-512_ztrqow.jpg")
+image = URI.open("https://res.cloudinary.com/dmpocwizs/image/upload/v1597931757/ckrdqzo2sl4226cxgxml8yeltva4.jpg")
 user.image.attach(io: image, filename: "user-profile-image", content_type: "image/jpg")
 user.save
 puts "Felipe created"
 puts "Users seeded!"
-
 
 titles = ["BBQ at Isar", "Watching CL final", "Beers after work", "Swimming at Starnberger See",
           "Bachata Dancing classes", "Theatre", "Sailing at Tegernsee", "Yoga at Westpark", "Clubbing",
@@ -61,31 +60,30 @@ locations = ["Großhesseloher Brücke at Isar", "Dorfstraße 2a, Straßlach", "O
              "Geiselgasteigstraße 88, Munich", "Gardasee", "Leopoldstraße, Munich",
              "Markgrafenstraße 38, Berlin"]
 
-images = ["https://res.cloudinary.com/dgnfxdfou/image/upload/v1597853657/Isar-Nord-c-M_C3_BCnchentv_bivqz8.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597853798/4706001_bjauj8.jpg",
-          "https://res.cloudinary.com/dr9hgxsps/image/upload/v1597657237/munich_wiesn_hiwwws.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597853868/Slider_Starnberger-See_StarnbergAmmersee_baebwl.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597853926/bachata-picture-29.04.18_pwmksp.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597853985/bayerischestaatsoper-2480_xesj7s.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597854028/2020-01-27-10_20_16-Window_aow0se.png",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597854166/pexels-photo-1472887_c4laey.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597854240/pexels-photo-1763075_c2o2wc.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597854291/pexels-photo-976873_r6z17v.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597854308/pexels-photo-1076767_tjbm4q.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597854398/kino674_v-contentxl_wsrupi.jpg",
-          "https://res.cloudinary.com/dgnfxdfou/image/upload/v1597854423/pexels-photo-747964_ifmi7c.jpg",
-        ]
+images = [
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931797/jsfa3n6z51toyi4r3mf11wt332f3.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931794/p3q2v4qfpf5vnhbqa2fba1pb6yll.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931792/jpzuzm47re84lp6y5b8t03mfrzl6.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931789/6ta4wx7qvuryg00nyi5enr0hoauf.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931786/rv36oyoq3bbrsma1vrd7dcbh39yw.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931782/7e6298i6yggjeff1c0ow3ouytyiz.png",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931779/tsx4p3qjpxuyskkpj39jen6n2dci.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931774/65gja4c6xitkk8wt9crcuhturecd.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931769/n45zc2j72uygnz3w4auso5h99o5c.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931763/9m9hukjfxuprjop9sjywwp9515v8.jpg",
+  "https://res.cloudinary.com/dmpocwizs/image/upload/v1597931760/uoibb2mt2x2afxstmexbrgyu4gmu.jpg",
+]
 
 times = ["14:00", "18:00", "19:00", "20:30", "16:00", "19:00", "20:00", "19:30"]
 
 categories = ["Food", "Sports", "Culture", "Party", "Drinks", "Adventure", "Sightseeing"]
 
-user_ids = [0,1,3,1,0,3,1,0,0,1,3,1,3]
+user_ids = [0, 1, 3, 1, 0, 3, 1, 0, 0, 1, 3, 1, 3]
 
-category_ids = [[4,5],[2,5],[5,3],[6,7],[2,3,6],[3,7],[2,5,6,7],[2,6],[4,5,6],[2,5],[3,6,7],[1,5,7],[1,6,7]]
-
+category_ids = [[4, 5], [2, 5], [5, 3], [6, 7], [2, 3, 6], [3, 7], [2, 5, 6, 7], [2, 6], [4, 5, 6], [2, 5], [3, 6, 7], [1, 5, 7], [1, 6, 7]]
 
 puts "Seeding categories..."
+
 categories.each do |category|
   Category.create!(name: category)
   puts "Created #{category}"
@@ -95,27 +93,26 @@ puts "Categories seeded"
 puts "Seeding events..."
 
 13.times do |i|
-      #puts category_ids[i-1][]
+  #puts category_ids[i-1][]
   event = Event.new(
     user: User.all[user_ids[i]],
     title: titles[i - 1],
-    description: descriptions[i-1],
+    description: descriptions[i - 1],
     location: locations[i - 1],
     #categories: Category.all[5,6],
     #categories: Category.all[category_ids[i-1[0],category_ids[i-1][1]],
 
-
     event_date: Faker::Date.between(from: "2020-08-21", to: "2020-08-31"),
-    event_time: times.sample
+    event_time: times.sample,
   )
-  photo = URI.open(images[i - 1])
+  # photo = URI.open(images[i - 1])
+  photo = URI.open(images.sample)
   event.photo.attach(io: photo, filename: "event-card-image", content_type: "image/jpg")
 
   event.categories = Category.all[rand(1..4), rand(5..7)]
 
   event.save
   puts "#{i + 1}th Event created..."
-
 end
 
 puts "All Events seeded!"
@@ -125,7 +122,6 @@ puts "Creating Requests"
 # p User.all.sample
 
 15.times do |i|
-
   request = Request.create!(
 
     user: User.all.sample,
